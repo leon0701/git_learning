@@ -1,0 +1,101 @@
+## 1. Install Ruby
+
+Install rbenv:
+
+```shell
+brew install rbenv ruby-build
+```
+
+Add rbenv to bash so that it loads every time you open a terminal:
+
+```shell
+echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
+source ~/.bash_profile
+```
+
+Install Ruby and set it as the default version:
+
+```shell
+rbenv install 2.5.0
+rbenv global 2.5.0
+
+ruby -v
+```
+
+Install bundler:
+
+```shell
+echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+gem install bundler
+rbenv rehash
+```
+
+## 2. Install MySQL
+
+Install mysql brew package:
+
+```shell
+brew install mysql
+```
+
+Start the mysql server:
+
+```shell
+mysql.server start
+```
+
+## 3. Install Redis
+
+Install redis brew package:
+
+```shell
+brew install redis
+```
+
+Start the redis server:
+
+```shell
+brew services start redis
+```
+
+## 4. Install ImageMagick
+
+```shell
+brew install imagemagick
+```
+
+## 5. Configure
+
+#### Clone the project:
+
+```shell
+git clone git@github.com/rubykube/peatio.git
+cd peatio
+bundle install
+```
+
+#### Configure assets
+
+```shell
+npm install -g yarn
+```
+
+```shell
+bundle exec rake yarn:install
+```
+
+#### Setup database:
+
+```shell
+bundle exec rake db:setup
+```
+
+#### Run
+
+Start the server:
+
+```shell
+bundle exec rails server
+```
+
+Once server is up and running, **visit [http://localhost:3000](http://localhost:3000)**
