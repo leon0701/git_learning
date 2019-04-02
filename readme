@@ -92,7 +92,7 @@ bundle exec rake db:setup
 
 #### Run
 
-Start the server:
+Start server:
 
 ```shell
 bundle exec rails server
